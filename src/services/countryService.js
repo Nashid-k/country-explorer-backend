@@ -2,7 +2,7 @@ import apiClient from "../utils/apiClient.js";
 
 
 export const fetchAllCountries = async ({ page = 1, limit = 12, search = "", region = "All" } = {}) => {
-    // 1. Fetch all data from external API (since it doesn't support our specific filters natively)
+    
     const response = await apiClient.get("/all?fields=name,flags,region,capital,population,languages");
 
     let countries = response.data.map((country) => ({
@@ -14,30 +14,30 @@ export const fetchAllCountries = async ({ page = 1, limit = 12, search = "", reg
         languages: country.languages ? Object.values(country.languages).join(",") : "N/A"
     }));
 
-    // 2. Filter by Search
+    
     if (search) {
         countries = countries.filter(country =>
             country.name.toLowerCase().includes(search.toLowerCase())
         );
     }
 
-    // 3. Filter by Region
+    
     if (region && region !== "All") {
         countries = countries.filter(country =>
             country.region === region
         );
     }
 
-    // 4. Calculate Pagination Metadata
+    
     const total = countries.length;
     const totalPages = Math.ceil(total / limit);
     const currentPage = parseInt(page);
     const startIndex = (currentPage - 1) * limit;
 
-    // 5. Slice Data
+    
     const paginatedCountries = countries.slice(startIndex, startIndex + parseInt(limit));
 
-    // 6. Return Data + Metadata
+    
     return {
         countries: paginatedCountries,
         total,
