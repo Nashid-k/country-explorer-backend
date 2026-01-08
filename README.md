@@ -22,13 +22,19 @@ npm run dev
 
 ## Environment Variables
 
-Create a `.env` file:
+Create a `.env` file for local development:
 
 ```
 PORT=5000
 COUNTRIES_API=https://restcountries.com/v3.1
 ```
 
+For Render deployment, set these in the dashboard:
+
+| Variable | Value |
+|----------|-------|
+| `COUNTRIES_API` | `https://restcountries.com/v3.1` |
+
 ## API
 
-The frontend connects to this backend at `http://localhost:5000`.
+The frontend connects to this backend.
