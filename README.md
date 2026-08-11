@@ -1,40 +1,63 @@
-# Country Explorer Backend
+<!-- ══════════════════════════════════════════════════════════════════ -->
+<!--                     NASHID K  —  PROJECT METRICS                   -->
+<!-- ══════════════════════════════════════════════════════════════════ -->
 
-A Node.js + Express backend that fetches country data from REST Countries API.
+# 🚀 country-explorer-backend
 
-## Features
+<p align="center">
+  ![](https://img.shields.io/badge/Express-4.x-lightgrey?style=flat-square&logo=express) 
+</p>
 
-- GET `/api/countries` - Returns list of all countries with name, flag, region, capital, population, and languages
+<p align="center">
+  <strong>A modern web application built with JavaScript.</strong>
+</p>
 
-## Tech Stack
+---
 
-- Node.js
-- Express
-- Axios
-- dotenv
+## 📌 Project Overview
+This repository contains **country-explorer-backend**, engineered with modern design standards, modular structures, and clean coding architectures.
 
-## Setup
+### ✨ Core Features
+*   **Express API Routing:** Modular routes and middleware handlers.
 
-```bash
-npm install
-npm run dev
+---
+
+## 📂 Project Architecture
+
+```text
+src/
+├── components/   # UI presentation elements
+├── config/       # Environment setup and server configurations
+├── routes/       # REST API endpoints
+└── App.js        # Core mounting file
 ```
 
-## Environment Variables
+---
 
-Create a `.env` file for local development:
+## ⚙️ Local Development Setup
 
-```
-PORT=5000
-COUNTRIES_API=https://restcountries.com/v3.1
-```
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/Nashid-k/country-explorer-backend.git
+   cd country-explorer-backend
+   ```
 
-For Render deployment, set these in the dashboard:
+2. **Install Dependencies:**
+   ```bash
+   npm install
+   ```
 
-| Variable | Value |
-|----------|-------|
-| `COUNTRIES_API` | `https://restcountries.com/v3.1` |
+3. **Configure Environment:**
+   *(If applicable, copy the `.env.example` file to `.env` and fill in variables)*
 
-## API
+4. **Start local dev server:**
+   ```bash
+   npm run dev
+   ```
 
-The frontend connects to this backend.
+---
+
+## 🛡️ Security & Best Practices Implemented
+*   **Strict Separations:** Modular separation between config, logic, and view components.
+*   **Environment Configuration:** Secure variables kept out of repository scopes via dotenv.
+*   **Git Standards:** Maintained clean histories and semantic commit protocols.
