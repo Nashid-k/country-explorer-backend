@@ -1,63 +1,45 @@
-<!-- ══════════════════════════════════════════════════════════════════ -->
-<!--                     NASHID K  —  PROJECT METRICS                   -->
-<!-- ══════════════════════════════════════════════════════════════════ -->
+# Country Explorer API — Express Proxy
 
-# 🚀 country-explorer-backend
+A small Express 5 API that retrieves country data from the REST Countries service, normalizes the response and exposes search, region-filtering and pagination to the frontend.
 
-<p align="center">
-  ![](https://img.shields.io/badge/Express-4.x-lightgrey?style=flat-square&logo=express) 
-</p>
+## Endpoints
 
-<p align="center">
-  <strong>A modern web application built with JavaScript.</strong>
-</p>
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| GET | `/api/countries` | List countries with `page`, `limit`, `search` and `region` query parameters |
+| GET | `/api/countries/:name` | Retrieve details for a country by name |
 
----
+The API maps country names, flags, regions, capitals, populations, languages, currencies, borders and area into a frontend-friendly response.
 
-## 📌 Project Overview
-This repository contains **country-explorer-backend**, engineered with modern design standards, modular structures, and clean coding architectures.
+## Stack
 
-### ✨ Core Features
-*   **Express API Routing:** Modular routes and middleware handlers.
+- Node.js
+- Express 5
+- Axios
+- REST Countries API
+- dotenv
 
----
+## Run locally
 
-## 📂 Project Architecture
-
-```text
-src/
-├── components/   # UI presentation elements
-├── config/       # Environment setup and server configurations
-├── routes/       # REST API endpoints
-└── App.js        # Core mounting file
+```bash
+git clone https://github.com/Nashid-k/country-explorer-backend.git
+cd country-explorer-backend
+npm install
+cp .env.example .env
+npm run dev
 ```
 
----
+The API listens on port `5000` by default.
 
-## ⚙️ Local Development Setup
+## Environment
 
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/Nashid-k/country-explorer-backend.git
-   cd country-explorer-backend
-   ```
+| Variable | Purpose |
+| --- | --- |
+| `PORT` | API port (defaults to 5000) |
 
-2. **Install Dependencies:**
-   ```bash
-   npm install
-   ```
+No database or JWT secret is required by the current implementation.
 
-3. **Configure Environment:**
-   *(If applicable, copy the `.env.example` file to `.env` and fill in variables)*
+## Scripts
 
-4. **Start local dev server:**
-   ```bash
-   npm run dev
-   ```
-
----
-
-## 🛡️ Security & Best Practices Implemented
-*   **Strict Separations:** Modular separation between config, logic, and view components.
-*   **Environment Configuration:** Secure variables kept out of repository scopes via dotenv.
-*   **Git Standards:** Maintained clean histories and semantic commit protocols.
+- `npm run dev` — start with Nodemon
+- `npm start` — start the API
